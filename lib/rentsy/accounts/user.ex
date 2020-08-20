@@ -8,6 +8,9 @@ defmodule Rentsy.Accounts.User do
     field :password, :string, virtual: true
     field :hashed_password, :string
     field :confirmed_at, :naive_datetime
+    field :type, :string
+    field :first_name, :string
+    field :last_name, :string
 
     timestamps()
   end
@@ -22,8 +25,9 @@ defmodule Rentsy.Accounts.User do
   """
   def registration_changeset(user, attrs) do
     user
-    |> cast(attrs, [:email, :password])
+    |> cast(attrs, [:email, :password, :type, :first_name, :last_name])
     |> validate_email()
+    |> validate_confirmation(:password, message: "does not match password")
     |> validate_password()
   end
 
