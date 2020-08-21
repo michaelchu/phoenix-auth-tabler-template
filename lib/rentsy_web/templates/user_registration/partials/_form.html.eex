@@ -10,7 +10,7 @@
 
     <div class="mb-3">
       <%= label f, :email, class: "form-label" %>
-      <%= email_input f, :email, required: true, class: "form-control" %>
+      <%= email_input f, :email, required: true, placeholder: "Email", class: "form-control" %>
       <%= error_tag f, :email %>
     </div>
     <div class="mb-3">
