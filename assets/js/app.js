@@ -12,4 +12,8 @@ import "../css/app.scss"
 //     import {Socket} from "phoenix"
 //     import socket from "./socket"
 //
+
 import "phoenix_html"
+
+import "./bootstrap/dist/js/bootstrap.bundle.min"
+import "./tabler.min"
